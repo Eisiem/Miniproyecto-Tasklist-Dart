@@ -1,14 +1,13 @@
 {
-  "name": "Dart and Flutter",
+  "name": "Miniproyectos en Dart",
   "build": {
-    "dockerfile": "Dockerfile"
+      "dockerfile": "Dockerfile"
   },
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-  },
-  "extensions": [
-    "Dart-Code.dart-code",
-    "Dart-Code.flutter"
+  "runArgs": [
+      "--privileged",
+      "-v",
+      "/dev/bus/usb:/dev/bus/usb"
   ],
-  "postCreateCommand": "flutter doctor"
+  "forwardPorts": [8081, 5037],
+  "remoteUser": "root"
 }
